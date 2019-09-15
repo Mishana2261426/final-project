@@ -6,6 +6,11 @@ use App\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * Class CreateUser
+ *
+ * @package App\Console\Commands
+ */
 class CreateUser extends Command
 {
     /**

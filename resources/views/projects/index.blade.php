@@ -74,19 +74,23 @@
                         <thead class="thead-dark">
 
                             <tr>
-                                <th>id</th>
-                                <th>Name</th>
-                                <th>Project_key</th>
+                                <th>id <a href="/project/list/id/asc">&#9650</a><a href="/project/list/id/desc">&#9660</a></th>
+                                <th>Name <a href="/project/list/name/asc">&#9650</a><a href="/project/list/name/desc">&#9660</a></th>
+                                <th>URL <a href="/project/list/url/asc">&#9650</a><a href="/project/list/url/desc">&#9660</a></th>
+                                <th>Project_key <a href="/project/list/project_key/asc">&#9650</a><a href="/project/list/project_key/desc">&#9660</a></th>
+                                <th>Удалить</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
+                            <?php
                                 foreach ($projects as $project) {
                                     ?>
                                     <tr>
                                         <td><?=$project->id?></td>
                                         <td><?=$project->name?></td>
+                                        <td><?=$project->url?></td>
                                         <td><?=$project->project_key?></td>
+                                        <td><a href="/project/delete/<?=$project->id?>" class="btn btn-danger">Удалить</a></td>
                                     </tr>
                                 <?php }
                             ?>

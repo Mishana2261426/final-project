@@ -17,9 +17,17 @@ Route::get('/', function () {
 
 Route::get('/login', 'Auth\LoginController@auth');
 Route::post('/login', 'Auth\LoginController@valid');
-Route::get('/listProjects', 'ProjectController@index');
-Route::get('/addProjects', 'ProjectController@add');
-Route::post('/addProjects', 'ProjectController@store');
+
+Route::get('/project/list', 'ProjectController@index');
+
+Route::get('/project/add', 'ProjectController@add');
+Route::post('/project/add', 'ProjectController@store');
+
+Route::get('/project/update', 'ProjectController@update');
+Route::post('/project/update', 'ProjectController@send');
+
+Route::get('/project/delete/{id}', 'ProjectController@delete');
+
 Route::get('/main', 'ProjectController@main');
 
-//safsfsdf
+Route::get('/project/list/{col}/{dir}', 'ProjectController@sort');

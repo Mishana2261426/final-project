@@ -70,14 +70,14 @@
                     Добавить проект
                 </div>
                 <div>
-					<form action="/addProjects" method="POST">
+					<form action="/project/add" method="POST">
 						<div class="form-group">
 	                		<label for="name">Name:</label>
-	                		<input type="text" name="name" class="form-control" id="name">
+	                		<input type="text" name="name" id="name" required>
 	                	</div>
 	                	<div class="form-group">
 	                		<label for="url">URL:</label>
-	                		<input type="text" name="url" class="form-control" id="url">
+	                		<input type="text" name="url" id="url">
 	                	</div>
 	                	<div>
 	                		<input type="submit" value="Сохранить" class="btn btn-primary">

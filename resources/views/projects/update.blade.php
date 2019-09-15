@@ -8,7 +8,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Styles -->
     <style>
         html, body {
@@ -67,13 +67,33 @@
 <div class="flex-center position-ref full-height">
     <div class="content">
         <div class="title m-b-md">
-            Projects
+            Редактировать проект
         </div>
+        <div>
+            <form action="/project/update" method="POST">
+                <div class="form-group">
+                    <label for="id">Изменить проект с name:</label>
+                    <select name="id" id="id">
+                        <?php
+                        foreach ($projects as $project) {
+                        ?>
+                        <option value="{{$project->id}}">{{$project->name}}</option>
+                        <?php
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="New name" required>
+                </div>
+                <div class="form-group">
+                    <label for="url">URL:</label>
+                    <input type="text" name="url" id="url" placeholder="New URL">
+                </div>
+                <input type="submit" class="btn btn-primary">
+            </form>
 
-        <div class="links">
-            <a href="{{ url('/project/list') }}">Список проектов</a>
-            <a href="{{ url('/project/add') }}">Добавить проект</a>
-            <a href="{{ url('/project/update') }}">Редактировать проект</a>
         </div>
     </div>
 </div>
